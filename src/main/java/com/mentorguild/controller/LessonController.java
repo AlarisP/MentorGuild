@@ -16,7 +16,7 @@ import com.mentorguild.service.MentorService;
 
 //Right now (before Spring), your “controller” is basically: a class that accepts requests (from your main method / menu / later HTTP) and delegates to services.
 @RestController
-@RequestMapping("/lessons")
+@RequestMapping("/api/lessons")
 public class LessonController {
     private final LessonService lessonService;
     private  final MentorService mentorService;
@@ -29,14 +29,14 @@ public class LessonController {
     }
 
 //Methods
-   @GetMapping("/")
-   public String health() {
-        return "I'm alive!";
-   }
-
-    public Lesson getLessonById(int lessonId){
-        return lessonService.getLessonById(lessonId);
-    }
+//   @GetMapping("/")
+//   public String health() {
+//        return "I'm alive!";
+//   }
+//
+//    public Lesson getLessonById(int lessonId){
+//        return lessonService.getLessonById(lessonId);
+//    }
 
     @GetMapping("/{id}")
     public ResponseEntity<String> displayLesson(
